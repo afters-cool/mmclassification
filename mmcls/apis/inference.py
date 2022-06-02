@@ -87,7 +87,7 @@ def inference_model(model, img):
         pred_label = np.argmax(scores, axis=1)[0]
         result = {'pred_label': pred_label, 'pred_score': float(pred_score)}
     result['pred_class'] = model.CLASSES[result['pred_label']]
-    return result
+    return result, scores
 
 
 def show_result_pyplot(model,
