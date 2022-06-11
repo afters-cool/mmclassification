@@ -89,6 +89,47 @@ def inference_model(model, img):
     result['pred_class'] = model.CLASSES[result['pred_label']]
     return result, scores
 
+#see https://github.com/open-mmlab/mmclassification/issues/855
+def inference_model_array(model, img_array):
+    """Inference image(s) with the classifier.
+
+    Args:
+        model (nn.Module): The loaded classifier.
+        img (str/ndarray): The image filename or loaded image. (N, H, W, C order)
+
+    Returns:
+        result (dict): The classification results that contains
+            `class_name`, `pred_label` and `pred_score`.
+    """
+    cfg = model.cfg
+    device = next(model.parameters()).device  # model device
+    # build the data pipeline
+    if cfg.data.test.pipeline[0]['type'] == 'LoadImageFromFile':
+        cfg.data.test.pipeline.pop(0)
+    test_pipeline = Compose(cfg.data.test.pipeline)
+    data_batch = []
+    for i in range(len(img_array)):
+        data = dict(img=img_array[i])
+        data = test_pipeline(data)
+        data_batch.append(data)
+    data = collate(data_batch, samples_per_gpu=len(img_array))
+    if next(model.parameters()).is_cuda:
+        # scatter to specified GPU
+        data = scatter(data, [device])[0]
+    results = []
+    # forward the model
+    with torch.no_grad():
+        scores = model(return_loss=False, **data)
+        for i in range(len(scores)):
+            pred_score = np.max(scores[i], axis=0)
+            pred_label = np.argmax(scores[i], axis=0)
+            result = {
+                'pred_label': pred_label,
+                'pred_score': float(pred_score),
+                'pred_class': model.CLASSES[pred_label]
+            }
+            results.append(result)
+    return results, scores
 
 def show_result_pyplot(model,
                        img,
