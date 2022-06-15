@@ -299,8 +299,9 @@ def main():
 
     # init logger
     logger = get_root_logger(log_level=cfg.log_level)
-    logger.info('Lr config : \n\n' + pformat(cfg.lr_config, sort_dicts=False) +
-                '\n')
+    #logger.info('Lr config : \n\n' + pformat(cfg.lr_config, sort_dicts=False) +
+    #            '\n')
+    logger.info('Lr config : \n\n' + pformat(cfg.lr_config) + '\n')
 
     by_epoch = True if cfg.runner.type == 'EpochBasedRunner' else False
 
