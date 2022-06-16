@@ -19,7 +19,7 @@ train_pipeline = [
     dict(type='RandomFlip', flip_prob=0.5, direction='horizontal'),
     dict(type='RandomFlip', flip_prob=0.5, direction='vertical'),
     dict(
-        type='Albu', transforms=[dict(type='ChannelShuffle', p=1)])
+        type='Albu', transforms=[dict(type='ChannelShuffle', p=1)]),
     # dict(
     #     type='Albu',
     #     transforms=[
