@@ -28,7 +28,7 @@ train_pipeline = [
             dict(type='RandomBrightnessContrast', p=0.5),
             dict(type='Cutout', p=0.05),
             dict(type='RandomSnow', p=0.1),
-        ], keymap=dict(img='image'), update_pad_shape=False),
+        ], update_pad_shape=False),
     dict(type='RandomFlip', flip_prob=0.5, direction='horizontal'),
     dict(type='RandomFlip', flip_prob=0.5, direction='vertical'),
     dict(type='Normalize', **img_norm_cfg),
