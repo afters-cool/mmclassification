@@ -87,8 +87,8 @@ class DeiTClsHead(VisionTransformerClsHead):
 
     def forward_train(self, x, gt_label):
         logger = get_root_logger()
-        logger.warning("MMClassification doesn't support to train the "
-                       'distilled version DeiT.')
+        #logger.warning("MMClassification doesn't support to train the "
+        #               'distilled version DeiT.')
         cls_token, dist_token = self.pre_logits(x)
         cls_score = (self.layers.head(cls_token) +
                      self.layers.head_dist(dist_token)) / 2
