@@ -1,5 +1,116 @@
 # Changelog
 
+## v0.25.0(06/12/2022)
+
+### Highlights
+
+- Support MLU backend.
+
+### New Features
+
+- Support MLU backend. ([#1159](https://github.com/open-mmlab/mmclassification/pull/1159))
+- Support Activation Checkpointing for ConvNeXt. ([#1152](https://github.com/open-mmlab/mmclassification/pull/1152))
+
+### Improvements
+
+- Add `dist_train_arm.sh` for ARM device and update NPU results. ([#1218](https://github.com/open-mmlab/mmclassification/pull/1218))
+
+### Bug Fixes
+
+- Fix a bug caused `MMClsWandbHook` stuck. ([#1242](https://github.com/open-mmlab/mmclassification/pull/1242))
+- Fix the redundant `device_ids` in `tools/test.py`. ([#1215](https://github.com/open-mmlab/mmclassification/pull/1215))
+
+### Docs Update
+
+- Add version banner and version warning in master docs. ([#1216](https://github.com/open-mmlab/mmclassification/pull/1216))
+- Update NPU support doc. ([#1198](https://github.com/open-mmlab/mmclassification/pull/1198))
+- Fixed typo in `pytorch2torchscript.md`. ([#1173](https://github.com/open-mmlab/mmclassification/pull/1173))
+- Fix typo in `miscellaneous.md`. ([#1137](https://github.com/open-mmlab/mmclassification/pull/1137))
+- further detail for the doc for `ClassBalancedDataset`. ([#901](https://github.com/open-mmlab/mmclassification/pull/901))
+
+## v0.24.1(31/10/2022)
+
+### New Features
+
+- Support mmcls with NPU backend. ([#1072](https://github.com/open-mmlab/mmclassification/pull/1072))
+
+### Bug Fixes
+
+- Fix performance issue in convnext DDP train. ([#1098](https://github.com/open-mmlab/mmclassification/pull/1098))
+
+## v0.24.0(30/9/2022)
+
+### Highlights
+
+- Support HorNet, EfficientFormerm, SwinTransformer V2 and MViT backbones.
+- Support Standford Cars dataset.
+
+### New Features
+
+- Support HorNet Backbone. ([#1013](https://github.com/open-mmlab/mmclassification/pull/1013))
+- Support EfficientFormer. ([#954](https://github.com/open-mmlab/mmclassification/pull/954))
+- Support Stanford Cars dataset. ([#893](https://github.com/open-mmlab/mmclassification/pull/893))
+- Support CSRA head. ([#881](https://github.com/open-mmlab/mmclassification/pull/881))
+- Support Swin Transform V2. ([#799](https://github.com/open-mmlab/mmclassification/pull/799))
+- Support MViT and add checkpoints. ([#924](https://github.com/open-mmlab/mmclassification/pull/924))
+
+### Improvements
+
+- [Improve] replace loop of progressbar in api/test. ([#878](https://github.com/open-mmlab/mmclassification/pull/878))
+- [Enhance] RepVGG for YOLOX-PAI. ([#1025](https://github.com/open-mmlab/mmclassification/pull/1025))
+- [Enhancement] Update VAN. ([#1017](https://github.com/open-mmlab/mmclassification/pull/1017))
+- [Refactor] Re-write `get_sinusoid_encoding` from third-party implementation. ([#965](https://github.com/open-mmlab/mmclassification/pull/965))
+- [Improve] Upgrade onnxsim to v0.4.0. ([#915](https://github.com/open-mmlab/mmclassification/pull/915))
+- [Improve] Fixed typo in `RepVGG`. ([#985](https://github.com/open-mmlab/mmclassification/pull/985))
+- [Improve] Using `train_step` instead of `forward` in PreciseBNHook ([#964](https://github.com/open-mmlab/mmclassification/pull/964))
+- [Improve] Use `forward_dummy` to calculate FLOPS. ([#953](https://github.com/open-mmlab/mmclassification/pull/953))
+
+### Bug Fixes
+
+- Fix warning with `torch.meshgrid`. ([#860](https://github.com/open-mmlab/mmclassification/pull/860))
+- Add matplotlib minimum version requriments. ([#909](https://github.com/open-mmlab/mmclassification/pull/909))
+- val loader should not drop last by default. ([#857](https://github.com/open-mmlab/mmclassification/pull/857))
+- Fix config.device bug in toturial. ([#1059](https://github.com/open-mmlab/mmclassification/pull/1059))
+- Fix attenstion clamp max params ([#1034](https://github.com/open-mmlab/mmclassification/pull/1034))
+- Fix device mismatch in Swin-v2. ([#976](https://github.com/open-mmlab/mmclassification/pull/976))
+- Fix the output position of Swin-Transformer. ([#947](https://github.com/open-mmlab/mmclassification/pull/947))
+
+### Docs Update
+
+- Fix typo in config.md. ([#827](https://github.com/open-mmlab/mmclassification/pull/827))
+- Add version for torchvision to avoide error. ([#903](https://github.com/open-mmlab/mmclassification/pull/903))
+- Fixed typo for `--out-dir` option of analyze_results.py. ([#898](https://github.com/open-mmlab/mmclassification/pull/898))
+- Refine the docstring of RegNet ([#935](https://github.com/open-mmlab/mmclassification/pull/935))
+
+## v0.23.2(28/7/2022)
+
+### New Features
+
+- Support MPS device. ([#894](https://github.com/open-mmlab/mmclassification/pull/894))
+
+### Bug Fixes
+
+- Fix a bug in Albu which caused crashing. ([#918](https://github.com/open-mmlab/mmclassification/pull/918))
+
+## v0.23.1(2/6/2022)
+
+### New Features
+
+- Dedicated MMClsWandbHook for MMClassification (Weights and Biases Integration) ([#764](https://github.com/open-mmlab/mmclassification/pull/764))
+
+### Improvements
+
+- Use mdformat instead of markdownlint to format markdown. ([#844](https://github.com/open-mmlab/mmclassification/pull/844))
+
+### Bug Fixes
+
+- Fix wrong `--local_rank`.
+
+### Docs Update
+
+- Update install tutorials. ([#854](https://github.com/open-mmlab/mmclassification/pull/854))
+- Fix wrong link in README. ([#835](https://github.com/open-mmlab/mmclassification/pull/835))
+
 ## v0.23.0(1/5/2022)
 
 ### New Features
@@ -45,7 +156,6 @@
 - [Feature] Add RepMLP backbone and checkpoints. ([#709](https://github.com/open-mmlab/mmclassification/pull/709))
 - [Feature] Support CUB dataset. ([#703](https://github.com/open-mmlab/mmclassification/pull/703))
 - [Feature] Support ResizeMix. ([#676](https://github.com/open-mmlab/mmclassification/pull/676))
-
 
 ### Improvements
 
@@ -285,7 +395,7 @@
 
 - Fix TnT compatibility and verbose warning. ([#436](https://github.com/open-mmlab/mmclassification/pull/436))
 - Support setting `--out-items` in `tools/test.py`.  ([#437](https://github.com/open-mmlab/mmclassification/pull/437))
-- Add datetime info and saving model using torch<1.6 format. ([#439](https://github.com/open-mmlab/mmclassification/pull/439))
+- Add datetime info and saving model using torch\<1.6 format. ([#439](https://github.com/open-mmlab/mmclassification/pull/439))
 - Improve downstream repositories compatibility. ([#421](https://github.com/open-mmlab/mmclassification/pull/421))
 - Rename the option `--options` to `--cfg-options` in some tools. ([#425](https://github.com/open-mmlab/mmclassification/pull/425))
 - Add PyTorch 1.9 and Python 3.9 build workflow, and remove some CI. ([#422](https://github.com/open-mmlab/mmclassification/pull/422))
@@ -308,6 +418,7 @@
 ## v0.15.0(31/8/2021)
 
 ### Highlights
+
 - Support `hparams` argument in `AutoAugment` and `RandAugment` to provide hyperparameters for sub-policies.
 - Support custom squeeze channels in `SELayer`.
 - Support classwise weight in losses.
@@ -338,6 +449,7 @@
 ## v0.14.0(4/8/2021)
 
 ### Highlights
+
 - Add transformer-in-transformer backbone and pretrain checkpoints, refers to [the paper](https://arxiv.org/abs/2103.00112).
 - Add Chinese colab tutorial.
 - Provide dockerfile to build mmcls dev docker image.

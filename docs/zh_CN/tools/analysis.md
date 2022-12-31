@@ -52,21 +52,21 @@ python tools/analysis_tools/analyze_logs.py plot_curve \
 
 - 绘制某日志文件对应的损失曲线图。
 
-    ```shell
-    python tools/analysis_tools/analyze_logs.py plot_curve your_log_json --keys loss --legend loss
-    ```
+  ```shell
+  python tools/analysis_tools/analyze_logs.py plot_curve your_log_json --keys loss --legend loss
+  ```
 
 - 绘制某日志文件对应的 top-1 和 top-5 准确率曲线图，并将曲线图导出为 results.jpg 文件。
 
-    ```shell
-    python tools/analysis_tools/analyze_logs.py plot_curve your_log_json --keys accuracy_top-1 accuracy_top-5  --legend top1 top5 --out results.jpg
-    ```
+  ```shell
+  python tools/analysis_tools/analyze_logs.py plot_curve your_log_json --keys accuracy_top-1 accuracy_top-5  --legend top1 top5 --out results.jpg
+  ```
 
 - 在同一图像内绘制两份日志文件对应的 top-1 准确率曲线图。
 
-    ```shell
-    python tools/analysis_tools/analyze_logs.py plot_curve log1.json log2.json --keys accuracy_top-1 --legend run1 run2
-    ```
+  ```shell
+  python tools/analysis_tools/analyze_logs.py plot_curve log1.json log2.json --keys accuracy_top-1 --legend run1 run2
+  ```
 
 ```{note}
 本工具会自动根据关键字段选择从日志的训练部分还是验证部分读取，因此如果你添加了
@@ -157,7 +157,7 @@ python tools/analysis_tools/analyze_results.py \
 
 - `config` ：配置文件的路径。
 - `result` ： `tools/test.py` 的输出结果文件。
-- `--out_dir` ：保存结果分析的文件夹路径。
+- `--out-dir` ：保存结果分析的文件夹路径。
 - `--topk` ：分别保存多少张预测成功/失败的图像。如果不指定，默认为 `20`。
 - `--cfg-options`: 额外的配置选项，会被合入配置文件，参考[教程 1：如何编写配置文件](https://mmclassification.readthedocs.io/zh_CN/latest/tutorials/config.html)。
 
@@ -171,7 +171,7 @@ python tools/analysis_tools/analyze_results.py \
 python tools/analysis_tools/analyze_results.py \
        configs/resnet/resnet50_xxxx.py \
        result.pkl \
-       --out_dir results \
+       --out-dir results \
        --topk 50
 ```
 

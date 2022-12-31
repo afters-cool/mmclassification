@@ -52,21 +52,21 @@ Examples:
 
 - Plot the loss curve in training.
 
-    ```shell
-    python tools/analysis_tools/analyze_logs.py plot_curve your_log_json --keys loss --legend loss
-    ```
+  ```shell
+  python tools/analysis_tools/analyze_logs.py plot_curve your_log_json --keys loss --legend loss
+  ```
 
 - Plot the top-1 accuracy and top-5 accuracy curves, and save the figure to results.jpg.
 
-    ```shell
-    python tools/analysis_tools/analyze_logs.py plot_curve your_log_json --keys accuracy_top-1 accuracy_top-5  --legend top1 top5 --out results.jpg
-    ```
+  ```shell
+  python tools/analysis_tools/analyze_logs.py plot_curve your_log_json --keys accuracy_top-1 accuracy_top-5  --legend top1 top5 --out results.jpg
+  ```
 
 - Compare the top-1 accuracy of two log files in the same figure.
 
-    ```shell
-    python tools/analysis_tools/analyze_logs.py plot_curve log1.json log2.json --keys accuracy_top-1 --legend exp1 exp2
-    ```
+  ```shell
+  python tools/analysis_tools/analyze_logs.py plot_curve log1.json log2.json --keys accuracy_top-1 --legend exp1 exp2
+  ```
 
 ```{note}
 The tool will automatically select to find keys in training logs or validation logs according to the keys.
@@ -157,7 +157,7 @@ python tools/analysis_tools/analyze_results.py \
 
 - `config` : The path of the model config file.
 - `result`:  Output result file in json/pickle format from `tools/test.py`.
-- `--out_dir`: Directory to store output files.
+- `--out-dir`: Directory to store output files.
 - `--topk`: The number of images in successful or failed prediction with the highest `topk` scores to save. If not specified, it will be set to 20.
 - `--cfg-options`: If specified, the key-value pair config will be merged into the config file, for more details please refer to [Tutorial 1: Learn about Configs](../tutorials/config.md)
 
@@ -171,7 +171,7 @@ In `tools/test.py`, we support using `--out-items` option to select which kind o
 python tools/analysis_tools/analyze_results.py \
        configs/resnet/resnet50_b32x8_imagenet.py \
        result.pkl \
-       --out_dir results \
+       --out-dir results \
        --topk 50
 ```
 

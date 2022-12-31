@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="resources/mmcls-logo.png" width="600"/>
+<img src="resources/mmcls-logo.png" width="600"/>
   <div>&nbsp;</div>
   <div align="center">
     <b><font size="5">OpenMMLab 官网</font></b>
@@ -19,19 +19,23 @@
   </div>
   <div>&nbsp;</div>
 
-  [![PyPI](https://img.shields.io/pypi/v/mmcls)](https://pypi.org/project/mmcls)
-  [![Docs](https://img.shields.io/badge/docs-latest-blue)](https://mmclassification.readthedocs.io/zh_CN/latest/)
-  [![Build Status](https://github.com/open-mmlab/mmclassification/workflows/build/badge.svg)](https://github.com/open-mmlab/mmclassification/actions)
-  [![codecov](https://codecov.io/gh/open-mmlab/mmclassification/branch/master/graph/badge.svg)](https://codecov.io/gh/open-mmlab/mmclassification)
-  [![license](https://img.shields.io/github/license/open-mmlab/mmclassification.svg)](https://github.com/open-mmlab/mmclassification/blob/master/LICENSE)
-  [![open issues](https://isitmaintained.com/badge/open/open-mmlab/mmclassification.svg)](https://github.com/open-mmlab/mmclassification/issues)
-  [![issue resolution](https://isitmaintained.com/badge/resolution/open-mmlab/mmclassification.svg)](https://github.com/open-mmlab/mmclassification/issues)
+[![PyPI](https://img.shields.io/pypi/v/mmcls)](https://pypi.org/project/mmcls)
+[![Docs](https://img.shields.io/badge/docs-latest-blue)](https://mmclassification.readthedocs.io/zh_CN/latest/)
+[![Build Status](https://github.com/open-mmlab/mmclassification/workflows/build/badge.svg)](https://github.com/open-mmlab/mmclassification/actions)
+[![codecov](https://codecov.io/gh/open-mmlab/mmclassification/branch/master/graph/badge.svg)](https://codecov.io/gh/open-mmlab/mmclassification)
+[![license](https://img.shields.io/github/license/open-mmlab/mmclassification.svg)](https://github.com/open-mmlab/mmclassification/blob/master/LICENSE)
+[![open issues](https://isitmaintained.com/badge/open/open-mmlab/mmclassification.svg)](https://github.com/open-mmlab/mmclassification/issues)
+[![issue resolution](https://isitmaintained.com/badge/resolution/open-mmlab/mmclassification.svg)](https://github.com/open-mmlab/mmclassification/issues)
 
-  [📘 中文文档](https://mmclassification.readthedocs.io/zh_CN/latest/) |
-  [🛠️ 安装教程](https://mmclassification.readthedocs.io/zh_CN/latest/install.html) |
-  [👀 模型库](https://mmclassification.readthedocs.io/zh_CN/latest/model_zoo.html) |
-  [🆕 更新日志](https://mmclassification.readthedocs.io/en/latest/changelog.html) |
-  [🤔 报告问题](https://github.com/open-mmlab/mmclassification/issues/new/choose)
+[📘 中文文档](https://mmclassification.readthedocs.io/zh_CN/latest/) |
+[🛠️ 安装教程](https://mmclassification.readthedocs.io/zh_CN/latest/install.html) |
+[👀 模型库](https://mmclassification.readthedocs.io/zh_CN/latest/model_zoo.html) |
+[🆕 更新日志](https://mmclassification.readthedocs.io/en/latest/changelog.html) |
+[🤔 报告问题](https://github.com/open-mmlab/mmclassification/issues/new/choose)
+
+:point_right: **MMClassification 1.0 版本即将正式发布，欢迎大家 [试用](https://github.com/open-mmlab/mmclassification/tree/1.x) 并 [参与讨论](https://github.com/open-mmlab/mmclassification/discussions)！** :point_left:
+
+</div>
 
 </div>
 
@@ -57,19 +61,27 @@ MMClassification 是一款基于 PyTorch 的开源图像分类工具箱，是 [O
 
 ## 更新日志
 
+MMClassification 1.0 已经发布！目前仍在公测中，如果希望试用，请切换到 [1.x 分支](https://github.com/open-mmlab/mmclassification/tree/1.x)，并在[讨论版](https://github.com/open-mmlab/mmclassification/discussions) 参加开发讨论！
+
+2022/12/06 发布了 v0.25.0 版本
+
+- 支持 MLU 设备
+- 添加了用于 ARM 设备训练的 `dist_train_arm.sh`
+
+2022/10/31 发布了 v0.24.1 版本
+
+- 支持了华为昇腾 NPU 设备。
+
+2022/9/30 发布了 v0.24.0 版本
+
+- 支持了 **HorNet**，**EfficientFormerm**，**SwinTransformer V2**，**MViT** 等主干网络。
+- 支持了 Support Standford Cars 数据集。
+
 2022/5/1 发布了 v0.23.0 版本
 
-新版本亮点：
 - 支持了 **DenseNet**，**VAN** 和 **PoolFormer** 三个网络，并提供了预训练模型。
 - 支持在 IPU 上进行训练。
 - 更新了 API 文档的样式，更方便查阅，[欢迎查阅](https://mmclassification.readthedocs.io/en/master/api/models.html)。
-
-2022/3/30 发布了 v0.22.0 版本
-
-新版本亮点：
-- 支持了一系列 **CSP Net**，包括 CSP-ResNet，CSP-ResNeXt 和 CSP-DarkNet。
-- 我们提供了一个新的 `CustomDataset` 类，这个类将帮助你轻松使用**自己的数据集**！
-- 支持了新的主干网络 **ConvMixer**、**RepMLP** 和一个新的数据集 **CUB dataset**。
 
 发布历史和更新细节请参考 [更新日志](docs/en/changelog.md)
 
@@ -78,7 +90,7 @@ MMClassification 是一款基于 PyTorch 的开源图像分类工具箱，是 [O
 以下是安装的简要步骤：
 
 ```shell
-conda create -n open-mmlab python=3.8 pytorch=1.10 cudatoolkit=11.3 torchvision -c pytorch -y
+conda create -n open-mmlab python=3.8 pytorch=1.10 cudatoolkit=11.3 torchvision==0.11.0 -c pytorch -y
 conda activate open-mmlab
 pip3 install openmim
 mim install mmcv-full
@@ -140,6 +152,9 @@ pip3 install -e .
 - [x] [ConvMixer](https://github.com/open-mmlab/mmclassification/tree/master/configs/convmixer)
 - [x] [CSPNet](https://github.com/open-mmlab/mmclassification/tree/master/configs/cspnet)
 - [x] [PoolFormer](https://github.com/open-mmlab/mmclassification/tree/master/configs/poolformer)
+- [x] [MViT](https://github.com/open-mmlab/mmclassification/tree/master/configs/mvit)
+- [x] [EfficientFormer](https://github.com/open-mmlab/mmclassification/tree/master/configs/efficientformer)
+- [x] [HorNet](https://github.com/open-mmlab/mmclassification/tree/master/configs/hornet)
 
 </details>
 
